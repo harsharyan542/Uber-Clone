@@ -42,7 +42,7 @@ const CaptainLogin = () => {
         placeholder='password'  />
         <button className='bg-[#111] text-white font-semibold mb-7 rounded px-4 py-2 w-full text-lg placeholder-text-base'>Login</button>
       </form>
-      <p className='text-center'>Join us!! <Link to='/UserSignup' className='text-center text-blue-500'>Register as Captain</Link></p>
+      <p className='text-center'>Join us!! <Link to='/CaptainSignup' className='text-center text-blue-500'>Register as Captain</Link></p>
       </div>
       <div>
         <Link to='/userLogin' className='bg-[#d5622d] flex item-center justify-center text-white font-semibold mb-7 rounded px-4 py-2 w-full text-lg placeholder-text-base'> Sign in as user</Link>
