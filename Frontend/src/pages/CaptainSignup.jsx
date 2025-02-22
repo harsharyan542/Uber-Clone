@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-
+import { CaptainDataContext } from '../context/CaptainContext'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 
 const CaptainSignup = () => {
 
+  const navigate = useNavigate()
 
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
@@ -16,25 +19,46 @@ const CaptainSignup = () => {
   const [ vehicleCapacity, setVehicleCapacity ] = useState('')
   const [ vehicleType, setVehicleType ] = useState('')
 
+  const { captain, setCaptain} = useContext(CaptainDataContext) 
+
 
 
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    const newUser = {
+    const captainData = {
       fullname: {
         firstname: firstName,
         lastname: lastName
       },
       email: email,
-      password: password
+      password: password,
+      vehicle: {
+        color: vehicleColor,
+        plate: vehiclePlate,
+        capacity: vehicleCapacity,
+        vehicleType: vehicleType
+      }
     }
-    console.log(newUser);
+
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/register`, captainData)
+
+    if(response.status === 201){
+      const data = response.data
+      console.log(data);
+      setCaptain(data.captain)
+      localStorage.setItem('token', data.token)
+      navigate('/CaptainHome')
+    }
 
     setEmail('')
     setFirstName('')
     setLastName('')
     setPassword('')
+    setVehicleColor('')
+    setVehiclePlate('')
+    setVehicleCapacity('')
+    setVehicleType('')
   }
   return (
     <div className='py-5 px-5 h-screen flex flex-col justify-between'>
