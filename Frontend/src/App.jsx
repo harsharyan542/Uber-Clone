@@ -11,6 +11,8 @@ import UserLogout from './pages/UserLogout'
 import CaptainHome from './pages/CaptainHome'
 import CaptainProtectWrapper from './pages/CaptainProtectedWrapper'
 import CaptainLogout from './pages/CaptainLogout'
+import Riding from './pages/Riding'
+import CaptainRiding from './pages/CaptainRiding'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path ="/UserSignup" element={<UserSignup/>} />
         <Route path ="/CaptainSignup" element={<CaptainSignup/>} />
         <Route path ="/CaptainLogin" element={<CaptainLogin/>} />
+        <Route path ="/riding" element = {<Riding />} />  
+        <Route path ="/captain-riding" element = {<CaptainRiding/>} />
         <Route path='/Home' element={
           <UserProtectedWrapper> 
               <Home/>
