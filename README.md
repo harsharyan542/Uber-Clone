@@ -42,6 +42,21 @@ This project is a full-stack Uber clone that provides a platform for users to bo
 
 ---
 
+---
+
+## Project Status
+
+### Current Progress:
+- The project is **unfinished**.
+- The basic functionality for user and captain authentication, ride booking, and ride management is implemented.
+
+### Remaining Work:
+- **UI Improvements**: The user interface needs enhancements to improve usability and aesthetics.
+- **Deployment**: The project is not yet deployed. Deployment to a platform like **Vercel**, **Netlify**, or **Heroku** is required.
+- **Additional Features**: Features like real-time ride tracking, payment gateway integration, and an admin dashboard are yet to be implemented.
+
+---
+
 ## Project Structure
 
 ### Frontend:
